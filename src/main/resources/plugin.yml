@@ -1,0 +1,6 @@
+name: TwitchIntegration
+version: '${version}'
+main: georglider.twitch.IntegrationApplication
+api-version: 1.15
+authors: [ Georglider ]
+description: Twitch Integration for your bukkit server
