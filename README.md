@@ -23,5 +23,5 @@
 
 ## TODO
 - [x] Release plugin
-- [] Add Integration with Twitch Subscribers and Bits
-- [] Fix plugin size
+- [ ] Add Integration with Twitch Subscribers and Bits
+- [ ] Fix plugin size
