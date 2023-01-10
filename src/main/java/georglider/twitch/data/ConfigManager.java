@@ -63,20 +63,19 @@ public class ConfigManager {
         }
 
         if (this.configFile.length() == 0) {
-            this.getConfig().set("client_secret", 1);
-            this.getConfig().set("client_id", 1);
-            this.getConfig().set("port", 3000);
-            this.getConfig().set("broadcaster_name", 1);
+            this.getConfig().set("client_secret", 8);
+            this.getConfig().set("client_id", 8);
+            this.getConfig().set("broadcaster_name", 8);
             this.getConfig().set("whitelist_time", "5M");
             this.getConfig().set("reward_name", "SMP Whitelist");
             this.getConfig().set("reward_price", 5000);
             this.getConfig().set("kick_message", "You need to buy whitelist for 5000 points on Twitch!");
             this.getConfig().set("chat_message", "$(PLAYER) bought whitelist just now!");
 
-            this.getConfig().set("app_access_token", 1);
-            this.getConfig().set("user_access_token", 1);
-            this.getConfig().set("reward_id", 0);
-            this.getConfig().set("broadcaster_id", 0);
+            this.getConfig().set("app_access_token", 8);
+            this.getConfig().set("user_access_token", 8);
+            this.getConfig().set("reward_id", 8);
+            this.getConfig().set("broadcaster_id", 8);
             this.saveConfig();
         }
     }
