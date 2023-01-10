@@ -1,1 +1,3 @@
 rootProject.name = 'twitch'
+include 'VirtualTwitchServer'
+

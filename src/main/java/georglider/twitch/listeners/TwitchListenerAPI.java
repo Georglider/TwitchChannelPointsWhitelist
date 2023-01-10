@@ -55,17 +55,17 @@ public class TwitchListenerAPI {
                 .withEnablePubSub(true)
                 .build();
 
-        if (this.config.getConfig().get("broadcaster_id") == null || this.config.getConfig().getInt("broadcaster_id") == 0) {
+        if (this.config.getConfig().getInt("broadcaster_id") == 8) {
             User broadcaster = twitchClient.getHelix().getUsers(config.getConfig().getString("app_access_token"), null, Collections.singletonList(config.getConfig().getString("broadcaster_name"))).execute().getUsers().get(0);
             config.getConfig().set("broadcaster_id", broadcaster.getId());
             config.saveConfig();
             config.reloadConfig();
         }
-        if (config.getConfig().get("reward_id") == null || config.getConfig().getInt("reward_id") != 0) {
+        if (config.getConfig().getInt("reward_id") == 8) {
             config.getConfig().set("reward_id", twitchClient.getHelix().createCustomReward(config.getConfig().getString("user_access_token"), config.getConfig().getString("broadcaster_id"),
                     CustomReward.builder()
                             .title(config.getConfig().getString("reward_name"))
-                            .cost(config.getConfig().getInt("reward_cost"))
+                            .cost(config.getConfig().getInt("reward_price"))
                             .isEnabled(false)
                             .isUserInputRequired(true)
                             .build()
@@ -99,10 +99,6 @@ public class TwitchListenerAPI {
 
             twitchClient.getPubSub().unsubscribeFromTopic(channelPointsRedemptionEvents);
         }
-    }
-
-    public TwitchClient get() {
-        return twitchClient;
     }
 
     public void addToWhiteList(String Nickname) throws CommandException, ExecutionException, InterruptedException {
