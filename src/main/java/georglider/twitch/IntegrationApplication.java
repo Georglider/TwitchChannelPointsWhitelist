@@ -75,7 +75,11 @@ public final class IntegrationApplication extends JavaPlugin {
     @Override
     public void onDisable() {
         this.twitch.stop();
-        //twitchClient.getPubSub().unsubscribeFromTopic(ChannelPointsListener);
+               Bukkit.getOnlinePlayers().forEach(player -> player.kickPlayer(
+                """     
+                        §cOOOOPS, server may be died press F :D
+               """
+        ));
     }
 
 }
