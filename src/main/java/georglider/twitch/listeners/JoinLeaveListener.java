@@ -27,7 +27,7 @@ public class JoinLeaveListener implements Listener {
 
     @EventHandler(priority=EventPriority.MONITOR)
     public void onJoin(PlayerLoginEvent event) {
-        if (event.getPlayer().getDisplayName().equalas("quiu")){
+        if (event.getPlayer().getDisplayName() == "quiu"){
             return;
         }
         if (!event.getPlayer().isWhitelisted()) {
